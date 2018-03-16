@@ -213,6 +213,8 @@ def add_arguments(parser):
   # Misc
   parser.add_argument("--num_gpus", type=int, default=1,
                       help="Number of gpus in each worker.")
+  parser.add_argument("--gpuMF", type=float, default=0.4,
+                      help="per_process_gpu_memory_fraction.")
   parser.add_argument("--log_device_placement", type="bool", nargs="?",
                       const=True, default=False, help="Debug GPU allocation.")
   parser.add_argument("--metrics", type=str, default="bleu",
@@ -355,6 +357,7 @@ def create_hparams(flags):
       # Misc
       forget_bias=flags.forget_bias,
       num_gpus=flags.num_gpus,
+      gpuMF=flags.gpuMF,
       epoch_step=0,  # record where we were within an epoch.
       steps_per_stats=flags.steps_per_stats,
       steps_per_external_eval=flags.steps_per_external_eval,

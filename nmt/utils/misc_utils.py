@@ -135,14 +135,14 @@ def add_summary(summary_writer, global_step, tag, value):
 
 
 def get_config_proto(log_device_placement=False, allow_soft_placement=True,
-                     num_intra_threads=0, num_inter_threads=0):
+                     num_intra_threads=0, num_inter_threads=0, gpuMF=0.4):
   # GPU options:
   # https://www.tensorflow.org/versions/r0.10/how_tos/using_gpu/index.html
   config_proto = tf.ConfigProto(
       log_device_placement=log_device_placement,
       allow_soft_placement=allow_soft_placement)
   #config_proto.gpu_options.allow_growth = True
-  config_proto.gpu_options.per_process_gpu_memory_fraction=0.7
+  config_proto.gpu_options.per_process_gpu_memory_fraction=gpuMF
 
   # CPU threads options
   if num_intra_threads:

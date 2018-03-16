@@ -316,7 +316,8 @@ def train(hparams, scope=None, target_session=""):
   config_proto = utils.get_config_proto(
       log_device_placement=log_device_placement,
       num_intra_threads=hparams.num_intra_threads,
-      num_inter_threads=hparams.num_inter_threads)
+      num_inter_threads=hparams.num_inter_threads,
+      gpuMF=hparams.gpuMF)
   train_sess = tf.Session(
       target=target_session, config=config_proto, graph=train_model.graph)
   eval_sess = tf.Session(
