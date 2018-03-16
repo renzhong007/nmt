@@ -311,6 +311,7 @@ def train(hparams, scope=None, target_session=""):
   log_f = tf.gfile.GFile(log_file, mode="a")
   utils.print_out("# log_file=%s" % log_file, log_f)
 
+  #gpu_options = tf.GPUOptions(per_process_gpu_memory_fraction=0.7)
   # TensorFlow model
   config_proto = utils.get_config_proto(
       log_device_placement=log_device_placement,

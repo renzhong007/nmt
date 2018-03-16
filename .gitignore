@@ -3,5 +3,5 @@ bazel-genfiles
 bazel-out
 bazel-testlogs
 .idea/
-__pycache__/
+*/__pycache__
 
