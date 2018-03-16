@@ -27,5 +27,6 @@ python3 -m nmt.nmt \
 	--num_layers=2 \
 	--num_units=512 \
 	--dropout=0.1 \
+	--gpuMF=0.4 \
 	--metrics=bleu
 
